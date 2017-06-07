@@ -1,0 +1,6 @@
+[submodule "zsh/.local/share/zsh/antigen"]
+	path = zsh/.local/share/zsh/antigen
+	url = https://github.com/zsh-users/antigen
+[submodule "zsh/.local/share/zsh/grml-etc-core"]
+	path = zsh/.local/share/zsh/grml-etc-core
+	url = https://github.com/grml/grml-etc-core
