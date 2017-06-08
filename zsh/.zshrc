@@ -23,6 +23,12 @@ if [[ -r /etc/zsh_command_not_found ]]; then
 fi
 
 
+# Direnv
+if command -v direnv &>/dev/null; then
+    eval "$(direnv hook $0)"
+fi
+
+
 # Antigen
 source "${_ZSH_ROOT}/antigen/antigen.zsh"
 
