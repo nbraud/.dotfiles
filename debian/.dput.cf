@@ -1,0 +1,18 @@
+[mentors]
+fqdn = mentors.debian.net
+incoming = /upload
+method = http
+allow_unsigned_uploads = 0
+progress_indicator = 2
+# Allow uploads for UNRELEASED packages
+allowed_distributions = .*
+
+
+[debomatic-amd64]
+fqdn           = debomatic-amd64.debian.net
+incoming       = /srv/debomatic-amd64
+login          = debomatic
+method         = scp
+allow_unsigned_uploads  = 0
+allow_dcut     = 1
+scp_compress   = 1

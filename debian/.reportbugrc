@@ -1,0 +1,11 @@
+# reportbug preferences file -*- conf -*-
+# character encoding: UTF-8
+
+# default operating mode: one of: novice, standard, advanced, expert
+mode advanced
+
+# default user interface
+ui text
+
+# GPG-sign the messages sent to the BTS
+sign gpg
