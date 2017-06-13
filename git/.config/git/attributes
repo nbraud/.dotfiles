@@ -1,0 +1,2 @@
+*.asc filter=gpg diff=gpg
+*.gpg filter=gpg diff=gpg

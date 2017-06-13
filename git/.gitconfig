@@ -1,0 +1,35 @@
+[push]
+	default = simple
+[hub]
+	protocol = https
+[alias]
+	br  = branch
+	ci  = commit
+	co  = checkout
+	ff  = merge --ff-only
+	fix = commit --amend --no-edit
+	st  = status
+
+[core]
+	attributesFile = ~/.config/git/attributes
+	excludesfile   = ~/.config/git/ignore
+	whitespace = trailing-space,space-before-tab,tabwidth=4
+[advice]
+	pushNonFastForward = false
+	statusHints = false
+[diff]
+	renames = copies
+	mnemonicprefix = true
+[branch]
+	autosetupmerge = true
+[diff "gpg"]
+	textconv = gpg --no-tty --decrypt
+	cachetextconv = false
+[diff "ansible-vault"]
+	textconv = ansible-vault view
+	cachetextconv = false
+[merge]
+	ff = no
+[user]
+	name = Nicolas Braud-Santoni
+	email = nicolas@braud-santoni.eu
