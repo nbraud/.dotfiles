@@ -81,13 +81,17 @@ function jam() {
 function gpg-recv-signers() {
     local IFS=':'
     local KEYS=()
-    for id in "$@"; do
-	gpg --list-sigs --with-colons "$id" | \
-	    while read sig _ _ _ keyid _ _ _ _ name _; do
-		[[ "$sig" == "sig" ]] && [[ "$name" == '[User ID not found]' ]] \
-		    || continue
-		KEYS+=("$keyid")
-	    done
-    done
+
+    if [ -z "$@" ]; then
+	echo "Are you *sure* you want to import all unknown signers?" >&2
+	echo "(return to continue, ^C to abort)"                      >&2
+	read _
+    fi
+    gpg --list-sigs --with-colons "$@" | \
+	while read sig _ _ _ keyid _ _ _ _ name _; do
+	    [[ "$sig" == "sig" ]] && [[ "$name" == '[User ID not found]' ]] \
+		|| continue
+	    KEYS+=("$keyid")
+	done
     sort -u <<< ${KEYS[@]} | xargs gpg --recv-keys
 }
