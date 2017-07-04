@@ -19,8 +19,8 @@ export PATH="${HOME}/.local/bin:${PATH}"
 export LD_LIBRARY_PATH="${HOME}/.local/lib"
 export ADOTDIR="${HOME}/.cache/antigen"
 
-!has clang || export CC=clang
-!has clang++ || export CXX=clang++
+! has clang || export CC=clang
+! has clang++ || export CXX=clang++
 export EDITOR=emacsclient
 
 
@@ -44,8 +44,8 @@ export GOPATH="$HOME/.cache/gocode/:/usr/share/gocode"
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
 # OCaml
-!has opam || eval $(opam config env)
-!has ocamlfind || export LD_LIBRARY_PATH="$(ocamlfind printconf destdir)/stublibs:${LD_LIBRARY_PATH}"
+! has opam || eval $(opam config env)
+! has ocamlfind || export LD_LIBRARY_PATH="$(ocamlfind printconf destdir)/stublibs:${LD_LIBRARY_PATH}"
 
 
 # Aquaria
