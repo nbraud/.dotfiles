@@ -3,6 +3,9 @@ local _ZSH_ROOT="${HOME}/.local/share/zsh"
 local _GRML_ROOT="${_ZSH_ROOT}/grml-etc-core"
 source "${_GRML_ROOT}/etc/zsh/zshenv"
 
+function has() {
+    command -v "$1" >/dev/null
+}
 
 # Locales
 export LANGUAGE=en_US.UTF-8
@@ -16,8 +19,8 @@ export PATH="${HOME}/.local/bin:${PATH}"
 export LD_LIBRARY_PATH="${HOME}/.local/lib"
 export ADOTDIR="${HOME}/.cache/antigen"
 
-export CC=clang
-export CXX=clang++
+!has clang || export CC=clang
+!has clang++ || export CXX=clang++
 export EDITOR=emacsclient
 
 
@@ -28,7 +31,7 @@ export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 # Ruby crap
 if [ -d "${HOME}/.gem/ruby" ]; then
     for i in "${HOME}"/.gem/ruby/*; do
-	PATH="${PATH}:${i}/bin"
+	      PATH="${PATH}:${i}/bin"
     done
 fi
 export PATH
@@ -41,8 +44,8 @@ export GOPATH="$HOME/.cache/gocode/:/usr/share/gocode"
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
 # OCaml
-eval $(opam config env)
-export LD_LIBRARY_PATH="$(ocamlfind printconf destdir)/stublibs:${LD_LIBRARY_PATH}"
+!has opam || eval $(opam config env)
+!has ocamlfind || export LD_LIBRARY_PATH="$(ocamlfind printconf destdir)/stublibs:${LD_LIBRARY_PATH}"
 
 
 # Aquaria
