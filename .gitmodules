@@ -4,3 +4,6 @@
 [submodule "zsh/.local/share/zsh/grml-etc-core"]
 	path = zsh/.local/share/zsh/grml-etc-core
 	url = https://github.com/grml/grml-etc-core
+[submodule "emacs/.emacs.d"]
+	path = emacs/.emacs.d
+	url = https://github.com/syl20bnr/spacemacs
