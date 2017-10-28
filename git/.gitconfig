@@ -28,8 +28,12 @@
 [diff "ansible-vault"]
 	textconv = ansible-vault view
 	cachetextconv = false
+
 [merge]
 	ff = no
+[pull]
+	ff = only
+
 [user]
 	name = Nicolas Braud-Santoni
 	email = nicolas@braud-santoni.eu
