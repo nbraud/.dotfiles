@@ -18,10 +18,10 @@ export LC_COLLATE=C
 export PATH="${HOME}/.local/bin:${PATH}"
 export LD_LIBRARY_PATH="${HOME}/.local/lib"
 export ADOTDIR="${HOME}/.cache/antigen"
-
-! has clang || export CC=clang
-! has clang++ || export CXX=clang++
 export EDITOR=emacsclient
+
+! has clang   || export  CC=clang
+! has clang++ || export CXX=clang++
 
 
 # Using GnuPG as a SSH agent
@@ -55,3 +55,10 @@ export AQUARIA_DATA_PATH="${HOME}/.local/aquaria"
 # Debian
 export DEBFULLNAME="Nicolas Braud-Santoni"
 export DEBEMAIL="nicolas@braud-santoni.eu"
+
+# Sway
+export XKB_DEFAULT_LAYOUT=us
+export XKB_DEFAULT_VARIANT=intl
+
+# pkg-config
+export PKG_CONFIG_PATH="${HOME}/.local/lib/pkgconfig"
