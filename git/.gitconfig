@@ -1,7 +1,9 @@
 [push]
 	default = simple
+
 [hub]
 	protocol = https
+
 [alias]
 	br  = branch
 	ci  = commit
@@ -14,14 +16,18 @@
 	attributesFile = ~/.config/git/attributes
 	excludesfile   = ~/.config/git/ignore
 	whitespace = trailing-space,space-before-tab,tabwidth=4
+
 [advice]
 	pushNonFastForward = false
 	statusHints = false
+
 [diff]
 	renames = copies
 	mnemonicprefix = true
+
 [branch]
 	autosetupmerge = true
+
 [diff "gpg"]
 	textconv = gpg --no-tty --decrypt
 	cachetextconv = false
