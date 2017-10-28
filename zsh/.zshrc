@@ -58,18 +58,20 @@ function _r3pass() {
 
 function jam() {
     if [ "$#" -eq 0 ]; then
-	echo "Usage: $0 file1.pdf [file2.pdf ...]" >&2
-	return
+        echo "Usage: $0 file1.pdf [file2.pdf ...]" >&2
+        return
     fi
+
+    local file
     for file in "$@"; do
         if ! [ -f "$file" ] || ! [ ${${file}##*.} = "pdf" ]; then
-        	echo "'$file' is not a PDF file" >&2
-        	return
+            echo "'$file' is not a PDF file" >&2
+            return
         fi
-        
+
         local base="$(basename "$file" .pdf)"
         local temp="$(mktemp -u "${base}.XXXXXX.pdf")"
-        
+
         pdfjam --outfile "$temp" --paper a4paper "$file"
         gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dEmbedAllFonts=true -dPDFSETTINGS=/prepress \
            -dSubsetFonts=false -dCompatibilityLevel=1.4 -dNOPLATFONTS                       \
@@ -83,15 +85,15 @@ function gpg-recv-signers() {
     local KEYS=()
 
     if [ -z "$@" ]; then
-	echo "Are you *sure* you want to import all unknown signers?" >&2
-	echo "(return to continue, ^C to abort)"                      >&2
-	read _
+        echo "Are you *sure* you want to import all unknown signers?" >&2
+        echo "(return to continue, ^C to abort)"                      >&2
+        read _
     fi
     gpg --list-sigs --with-colons "$@" | \
-	while read sig _ _ _ keyid _ _ _ _ name _; do
-	    [[ "$sig" == "sig" ]] && [[ "$name" == '[User ID not found]' ]] \
-		|| continue
-	    KEYS+=("$keyid")
-	done
+        while read sig _ _ _ keyid _ _ _ _ name _; do
+            [[ "$sig" == "sig" ]] && [[ "$name" == '[User ID not found]' ]] \
+                || continue
+            KEYS+=("$keyid")
+        done
     sort -u <<< ${KEYS[@]} | xargs gpg --recv-keys
 }
