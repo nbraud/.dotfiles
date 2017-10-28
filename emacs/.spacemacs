@@ -50,6 +50,7 @@ values."
      emacs-lisp
      git
      markdown
+     theming
      org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -62,7 +63,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(color-theme-solarized)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -317,6 +318,30 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  ;; Solarized integration stolen from
+  ;;   http://philipdaniels.com/blog/2017/02/spacemacs---configuring-the-solarized-theme/
+  (setq theming-modifications
+    '((solarized
+      ;; Provide a sort of "on-off" modeline whereby the current buffer has a nice
+      ;; bright blue background, and all the others are in cream.
+      ;; TODO: Change to use variables here. However, got error:
+      ;; (Spacemacs) Error in dotspacemacs/user-config: Wrong type argument: stringp, pd-blue
+      (mode-line :foreground "#e9e2cb" :background "#2075c7" :inverse-video nil)
+      (powerline-active1 :foreground "#e9e2cb" :background "#2075c7" :inverse-video nil)
+      (powerline-active2 :foreground "#e9e2cb" :background "#2075c7" :inverse-video nil)
+      (mode-line-inactive :foreground "#2075c7" :background "#e9e2cb" :inverse-video nil)
+      (powerline-inactive1 :foreground "#2075c7" :background "#e9e2cb" :inverse-video nil)
+      (powerline-inactive2 :foreground "#2075c7" :background "#e9e2cb" :inverse-video nil)
+      ;; Make a really prominent helm selection line.
+      (helm-selection :foreground "white" :background "red" :inverse-video nil)
+      ;; See comment above about dotspacemacs-colorize-cursor-according-to-state.
+      (cursor :background "#b58900")
+    )))
+
+  (set-terminal-parameter nil 'background-mode 'dark)
+  (set-frame-parameter nil 'background-mode 'dark)
+  (spacemacs/load-theme 'solarized)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
