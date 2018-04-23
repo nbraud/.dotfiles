@@ -62,3 +62,8 @@ export XKB_DEFAULT_VARIANT=intl
 
 # pkg-config
 export PKG_CONFIG_PATH="${HOME}/.local/lib/pkgconfig"
+
+# XDG/systemd crap
+if [ -d /run/user ]; then
+    export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+fi
