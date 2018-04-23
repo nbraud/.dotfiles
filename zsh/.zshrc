@@ -91,7 +91,7 @@ function gpg-recv-signers() {
     local IFS=':'
     local KEYS=()
 
-    if [ -z "$@" ]; then
+    if [ "$#" -eq 0 ]; then
         echo "Are you *sure* you want to import all unknown signers?" >&2
         echo "(return to continue, ^C to abort)"                      >&2
         read _
@@ -102,5 +102,6 @@ function gpg-recv-signers() {
                 || continue
             KEYS+=("$keyid")
         done
+    local IFS=' '
     sort -u <<< ${KEYS[@]} | xargs gpg --recv-keys
 }
