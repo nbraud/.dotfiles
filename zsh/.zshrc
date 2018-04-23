@@ -57,6 +57,12 @@ function _r3pass() {
     PASSWORD_STORE_DIR="${HOME}"/perso/r3/noc-pass _pass
 }
 
+
+if command -v kubectl >/dev/null; then
+    source <(kubectl completion zsh)
+fi
+
+
 function jam() {
     if [ "$#" -eq 0 ]; then
         echo "Usage: $0 file1.pdf [file2.pdf ...]" >&2
