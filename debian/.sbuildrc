@@ -5,7 +5,9 @@
 ## DPKG-BUILDPACKAGE OPTIONS
 ##
 
+$build_source = 1;
 $source_only_changes = 1;
+$force_orig_source = 1;
 
 # PGP-related option to pass to dpkg-buildpackage. Usually neither .dsc
 # nor .changes files shall be signed automatically.
