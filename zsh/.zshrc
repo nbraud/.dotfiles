@@ -25,7 +25,6 @@ fi
 
 # Direnv
 if command -v direnv &>/dev/null; then
-    export DIRENV_BASH=zsh
     eval "$(direnv hook $0)"
 fi
 
