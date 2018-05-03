@@ -39,6 +39,9 @@
 	ff = no
 [pull]
 	ff = only
+[rebase]
+	autosquash = on
+	autostash = on
 
 [user]
 	name = Nicolas Braud-Santoni
