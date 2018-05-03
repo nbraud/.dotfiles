@@ -9,3 +9,6 @@ ui text
 
 # GPG-sign the messages sent to the BTS
 sign gpg
+
+# Do not query the Debian BTS for existing bugs
+no-query-bts

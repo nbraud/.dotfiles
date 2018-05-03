@@ -1,5 +1,0 @@
-LINTIAN_PROFILE=pkg-perl
-info = yes
-display-info = yes
-pedantic = yes
-color = auto
