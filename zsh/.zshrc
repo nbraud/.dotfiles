@@ -105,3 +105,20 @@ function gpg-recv-signers() {
     local IFS=' '
     sort -u <<< ${KEYS[@]} | xargs gpg --recv-keys
 }
+
+if [ -e ~/codenames.xz ]; then
+    function codename() {
+        local n=20
+        if [ "$#" -eq 1 ] && [[ "$1" = <-> ]]; then
+            n="$1"
+        elif [ "$#" -ne 0 ]; then
+            cat >&2 <<EOF
+Usage: $0 [n]
+Prints n randomly-sampled codenames, one per line.  n defaults to $n.
+EOF
+            return 1
+        fi
+
+        xzcat ~/codenames.xz | shuf -n "$n"
+    }
+fi
