@@ -17,6 +17,9 @@
 	excludesfile   = ~/.config/git/ignore
 	whitespace = trailing-space,space-before-tab,tabwidth=4
 
+[init]
+	templateDir = ~/.config/git/template/
+
 [advice]
 	pushNonFastForward = false
 	statusHints = false
