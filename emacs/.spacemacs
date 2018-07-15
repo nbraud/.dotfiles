@@ -334,6 +334,11 @@ you should place your code here."
    require-final-newline t
    mode-require-final-newline t)
 
+  ;; org-mode letters
+  (setq org-latex-pdf-process
+        "latexmk -pdflatex='xelatex -interaction nonstopmode' -pdf -f %f")
+  (eval-after-load 'ox '(require 'ox-koma-letter))
+
   ;; Solarized integration stolen from
   ;;   http://philipdaniels.com/blog/2017/02/spacemacs---configuring-the-solarized-theme/
   (setq theming-modifications
