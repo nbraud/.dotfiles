@@ -59,5 +59,8 @@
 [url "ssh://git@salsa.debian.org/"]
 	pushInsteadOf = "https://salsa.debian.org/"
 
+[url "ssh://gitlab.com/"]
+	pushInsteadOf = "https://gitlab.com/"
+
 [url "ssh://github.com/"]
 	pushInsteadOf = "https://github.com/"
