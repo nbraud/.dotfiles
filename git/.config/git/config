@@ -64,3 +64,5 @@
 
 [url "ssh://github.com/"]
 	pushInsteadOf = "https://github.com/"
+[fetch]
+	prune = yes
