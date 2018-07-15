@@ -1,4 +1,4 @@
 # Binding lifted from
 #  http://agateau.com/2016/starting-an-interactive-rebase-from-tig/
-bind main R !git rebase -i %(commit)^
+bind main R !git rebase -i %(commit)
 bind diff R !git rebase -i %(commit)^
