@@ -362,7 +362,38 @@ you should place your code here."
   (set-terminal-parameter nil 'background-mode 'dark)
   (set-frame-parameter nil 'background-mode 'dark)
   (spacemacs/load-theme 'solarized)
+  (setq vc-follow-symlinks nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
+ '(debian-changelog-full-name "Nicolas Braud-Santoni")
+ '(debian-changelog-mailing-address "nicolas@braud-santoni.eu")
+ '(evil-want-Y-yank-to-eol nil)
+ '(package-selected-packages
+   (quote
+    (salt-mode mmm-jinja2 graphviz-dot-mode ob-elixir flycheck-mix flycheck-credo alchemist elixir-mode sql-indent utop tuareg caml ocp-indent merlin rainbow-mode adoc-mode markup-faces phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby julia-repl julia-mode flycheck-julia go-guru go-eldoc go-mode yaml-mode which-key web-mode use-package pug-mode org-projectile org-category-capture org-download mmm-mode markdown-toc markdown-mode magit-gitflow intero flycheck hy-mode dash-functional htmlize helm-make helm helm-core evil-magit evil-escape diff-hl counsel-projectile projectile counsel swiper company-ghc color-theme-solarized yapfify wgrep toml-mode tagedit smex smeargle slim-mode seq scss-mode sass-mode racer pyvenv pytest pyenv-mode py-isort pkg-info pip-requirements pcre2el orgit org-present org-pomodoro nginx-mode macrostep live-py-mode let-alist less-css-mode json-mode jinja2-mode ivy-hydra hlint-refactor hindent help-fns+ haskell-snippets gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ ghc gh-md flx exec-path-from-shell evil-visualstar emmet-mode elisp-slime-nav diminish cython-mode company-ghci color-theme cmm-mode cargo bind-map bind-key auto-compile ansible-doc ansible anaconda-mode ace-window)))
+ '(safe-local-variable-values
+   (quote
+    ((org-export-allow-bind-keywords . t)
+     (eval ansible)))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(cursor ((t (:background "#b58900"))))
+ '(helm-selection ((t (:foreground "white" :background "red" :inverse-video nil))))
+ '(mode-line ((t (:foreground "#e9e2cb" :background "#2075c7" :inverse-video nil))))
+ '(mode-line-inactive ((t (:foreground "#2075c7" :background "#e9e2cb" :inverse-video nil))))
+ '(powerline-active1 ((t (:foreground "#e9e2cb" :background "#2075c7" :inverse-video nil))))
+ '(powerline-active2 ((t (:foreground "#e9e2cb" :background "#2075c7" :inverse-video nil))))
+ '(powerline-inactive1 ((t (:foreground "#2075c7" :background "#e9e2cb" :inverse-video nil))))
+ '(powerline-inactive2 ((t (:foreground "#2075c7" :background "#e9e2cb" :inverse-video nil)))))
