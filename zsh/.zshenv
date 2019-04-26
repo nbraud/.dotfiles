@@ -55,7 +55,7 @@ ld_library_path+=("${HOME}/.local/lib")
 if has go; then
     typeset -T GOPATH gopath
     gopath=("$HOME/.cache/gocode/" "/usr/share/gocode")
-    ! [ -d ~/.cache/gocode/bin ] || path+="${HOME}/.cache/gocode/bin"
+    ! [ -d ~/.cache/gocode/bin ] || path+=("${HOME}/.cache/gocode/bin")
 fi
 
 # OCaml
