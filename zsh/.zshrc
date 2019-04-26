@@ -122,3 +122,9 @@ EOF
         xzcat ~/codenames.xz | shuf -n "$n"
     }
 fi
+
+if command -v http >/dev/null; then
+    function httpager() {
+        http --pretty=all --print=hb "$@" | less -R
+    }
+fi
