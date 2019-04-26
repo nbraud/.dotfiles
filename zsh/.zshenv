@@ -67,3 +67,6 @@ export PKG_CONFIG_PATH="${HOME}/.local/lib/pkgconfig"
 if [ -d /run/user ]; then
     export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 fi
+
+# Racket stuff
+path+=( ~/.racket/*/bin(/) )
