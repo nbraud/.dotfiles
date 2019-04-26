@@ -51,10 +51,10 @@ antigen apply
 # Local custom functions
 compdef _r3pass r3pass
 function r3pass() {
-    PASSWORD_STORE_DIR="${HOME}"/perso/r3/noc-pass pass $@
+    PASSWORD_STORE_DIR="${HOME}"/perso/r3/noc-pass pass "$@"
 }
 function _r3pass() {
-    PASSWORD_STORE_DIR="${HOME}"/perso/r3/noc-pass _pass
+    PASSWORD_STORE_DIR="${HOME}"/perso/r3/noc-pass _pass "$@"
 }
 
 
