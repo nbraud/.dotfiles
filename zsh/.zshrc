@@ -128,3 +128,11 @@ if command -v http >/dev/null; then
         http --pretty=all --print=hb "$@" | less -R
     }
 fi
+
+if command -v startx >/dev/null; then
+    if command -v vlock >/dev/null; then
+	alias sx='startx &; vlock'
+    else
+	alias sx='exec startx'
+    fi
+fi
