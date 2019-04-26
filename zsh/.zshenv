@@ -54,7 +54,7 @@ export AQUARIA_DATA_PATH="${HOME}/.local/aquaria"
 
 # Debian
 export DEBFULLNAME="Nicolas Braud-Santoni"
-export DEBEMAIL="nicolas@braud-santoni.eu"
+export DEBEMAIL="nicoo@debian.org"
 
 # Sway
 export XKB_DEFAULT_LAYOUT=us

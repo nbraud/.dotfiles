@@ -1,3 +1,6 @@
+[DEFAULT]
+default_host_main	= ssh-upload
+
 [mentors]
 fqdn = mentors.debian.net
 incoming = /upload
