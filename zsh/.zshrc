@@ -4,7 +4,7 @@
 export GRML_NO_APT_ALIASES=1
 export GRML_NO_SMALL_ALIASES=1
 
-fpath=("${_GRML_ROOT}/usr_share_grml/zsh/" $fpath)
+fpath=("${_GRML_ROOT}/usr_share_grml/zsh/" "${HOME}/.local/share/zsh/zfuns" $fpath)
 source "${_GRML_ROOT}/etc/zsh/zshrc"
 
 
