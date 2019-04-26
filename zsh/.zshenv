@@ -44,7 +44,7 @@ export GOPATH="$HOME/.cache/gocode/:/usr/share/gocode"
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
 # OCaml
-! has opam || eval $(opam config env)
+! has opam || eval $(opam env)
 ! has ocamlfind || export LD_LIBRARY_PATH="$(ocamlfind printconf destdir)/stublibs:${LD_LIBRARY_PATH}"
 
 
