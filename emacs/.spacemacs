@@ -375,7 +375,7 @@ you should place your code here."
  '(ansi-color-names-vector
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
  '(debian-changelog-full-name "Nicolas Braud-Santoni")
- '(debian-changelog-mailing-address "nicolas@braud-santoni.eu")
+ '(debian-changelog-mailing-address "nicoo@debian.org")
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
