@@ -69,3 +69,5 @@
 	prune = yes
 [tag]
 	sort = version:refname
+[protocol]
+	version = 2
