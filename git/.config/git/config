@@ -53,10 +53,6 @@
 	signingkey = 0xEC9D370872BC7A8C
 
 
-[url "ssh://git.debian.org/"]
-	pushInsteadOf = "https://anonscm.debian.org/"
-	pushInsteadOf = "https://git.debian.org/"
-
 [url "ssh://git@salsa.debian.org/"]
 	pushInsteadOf = "https://salsa.debian.org/"
 
