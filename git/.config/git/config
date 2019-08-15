@@ -67,3 +67,5 @@
 
 [fetch]
 	prune = yes
+[tag]
+	sort = version:refname
