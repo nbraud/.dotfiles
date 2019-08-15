@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     csv
      graphviz
      elixir
      sql
@@ -70,7 +71,15 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(color-theme-solarized json-mode json-snatcher salt-mode)
+   dotspacemacs-additional-packages
+   '(
+     color-theme-solarized
+     debian-el
+     dpkg-dev-el
+     json-mode
+     json-snatcher
+     salt-mode
+    )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -338,6 +347,7 @@ you should place your code here."
   (setq org-latex-pdf-process
         "latexmk -pdflatex='xelatex -interaction nonstopmode' -pdf -f %f")
   (eval-after-load 'ox '(require 'ox-koma-letter))
+  (eval-after-load 'ox '(require 'ox-beamer))
 
   ;; Solarized integration stolen from
   ;;   http://philipdaniels.com/blog/2017/02/spacemacs---configuring-the-solarized-theme/
@@ -379,7 +389,7 @@ you should place your code here."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (salt-mode mmm-jinja2 graphviz-dot-mode ob-elixir flycheck-mix flycheck-credo alchemist elixir-mode sql-indent utop tuareg caml ocp-indent merlin rainbow-mode adoc-mode markup-faces phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby julia-repl julia-mode flycheck-julia go-guru go-eldoc go-mode yaml-mode which-key web-mode use-package pug-mode org-projectile org-category-capture org-download mmm-mode markdown-toc markdown-mode magit-gitflow intero flycheck hy-mode dash-functional htmlize helm-make helm helm-core evil-magit evil-escape diff-hl counsel-projectile projectile counsel swiper company-ghc color-theme-solarized yapfify wgrep toml-mode tagedit smex smeargle slim-mode seq scss-mode sass-mode racer pyvenv pytest pyenv-mode py-isort pkg-info pip-requirements pcre2el orgit org-present org-pomodoro nginx-mode macrostep live-py-mode let-alist less-css-mode json-mode jinja2-mode ivy-hydra hlint-refactor hindent help-fns+ haskell-snippets gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ ghc gh-md flx exec-path-from-shell evil-visualstar emmet-mode elisp-slime-nav diminish cython-mode company-ghci color-theme cmm-mode cargo bind-map bind-key auto-compile ansible-doc ansible anaconda-mode ace-window)))
+    (csv-mode dpkg-dev-el debian-el company-terraform terraform-mode pos-tip alert log4e gntp org-plus-contrib json-snatcher json-reformat hydra yasnippet haml-mode popup fringe-helper git-gutter+ git-gutter magit magit-popup git-commit ghub async with-editor dash evil goto-chg ivy haskell-mode rust-mode packed pythonic f s company epl avy org-mime salt-mode mmm-jinja2 graphviz-dot-mode ob-elixir flycheck-mix flycheck-credo alchemist elixir-mode sql-indent utop tuareg caml ocp-indent merlin rainbow-mode adoc-mode markup-faces phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby julia-repl julia-mode flycheck-julia go-guru go-eldoc go-mode yaml-mode which-key web-mode use-package pug-mode org-projectile org-category-capture org-download mmm-mode markdown-toc markdown-mode magit-gitflow intero flycheck hy-mode dash-functional htmlize helm-make helm helm-core evil-magit evil-escape diff-hl counsel-projectile projectile counsel swiper company-ghc color-theme-solarized yapfify wgrep toml-mode tagedit smex smeargle slim-mode seq scss-mode sass-mode racer pyvenv pytest pyenv-mode py-isort pkg-info pip-requirements pcre2el orgit org-present org-pomodoro nginx-mode macrostep live-py-mode let-alist less-css-mode json-mode jinja2-mode ivy-hydra hlint-refactor hindent help-fns+ haskell-snippets gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ ghc gh-md flx exec-path-from-shell evil-visualstar emmet-mode elisp-slime-nav diminish cython-mode company-ghci color-theme cmm-mode cargo bind-map bind-key auto-compile ansible-doc ansible anaconda-mode ace-window)))
  '(safe-local-variable-values
    (quote
     ((org-export-allow-bind-keywords . t)
