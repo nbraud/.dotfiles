@@ -2,3 +2,8 @@
 #  http://agateau.com/2016/starting-an-interactive-rebase-from-tig/
 bind main R !git rebase -i %(commit)
 bind diff R !git rebase -i %(commit)^
+
+# Display OpenPGP signatures:
+#  https://github.com/jonas/tig/issues/208#issuecomment-352813725
+set log-options = --show-signature
+set diff-options = --show-signature
