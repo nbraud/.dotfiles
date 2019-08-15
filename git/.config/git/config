@@ -1,5 +1,6 @@
 [push]
 	default = current
+	followTags = on
 
 [hub]
 	protocol = https
