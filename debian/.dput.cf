@@ -1,6 +1,17 @@
 [DEFAULT]
 default_host_main	= ssh-upload
 
+# https://lists.debian.org/debian-devel-announce/2008/09/msg00007.html
+[ssh-upload]
+login                  = *
+fqdn                   = ssh.upload.debian.org
+method                 = scp
+incoming               = /srv/upload.debian.org/UploadQueue/
+allow_dcut             = 1
+# Please, upload your package to the proper archive
+# https://www.debian.org/doc/manuals/developers-reference/pkgs.html#bug-security-upload
+allowed_distributions  = (?!UNRELEASED|.*-security)
+
 [mentors]
 fqdn = mentors.debian.net
 incoming = /upload
