@@ -8,6 +8,10 @@ fpath=("${_GRML_ROOT}/usr_share_grml/zsh/" "${HOME}/.local/share/zsh/zfuns" $fpa
 source "${_GRML_ROOT}/etc/zsh/zshrc"
 
 
+# Some options/configuration
+## Use natural sorting by default when expanding globs
+setopt NUMERIC_GLOB_SORT
+
 # Aliases
 alias tuerctl='ssh -i ${HOME}/.ssh/keys/realraum/id_door tuerctl@torwaechter.mgmt.realraum.at'
 alias cdtmp='cd "$(mktemp -d)"'
