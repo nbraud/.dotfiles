@@ -129,10 +129,11 @@ if command -v http >/dev/null; then
     }
 fi
 
-if command -v startx >/dev/null; then
+GUI_SESSION=startx
+if command -v ${GUI_SESSION} >/dev/null; then
     if command -v vlock >/dev/null; then
-	alias sx='startx &; vlock'
+	alias sx="${GUI_SESSION} &; vlock"
     else
-	alias sx='exec startx'
+	alias sx="exec ${GUI_SESSION}"
     fi
 fi
