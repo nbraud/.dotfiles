@@ -129,7 +129,7 @@ if command -v http >/dev/null; then
     }
 fi
 
-GUI_SESSION=startx
+GUI_SESSION=sway
 if command -v ${GUI_SESSION} >/dev/null; then
     if command -v vlock >/dev/null; then
 	alias sx="${GUI_SESSION} &; vlock"
