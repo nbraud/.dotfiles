@@ -7,3 +7,6 @@
 [submodule "emacs/.emacs.d"]
 	path = emacs/.emacs.d
 	url = https://github.com/syl20bnr/spacemacs
+[submodule "gdb/.local/share/gdb-dashboard"]
+	path = gdb/.local/share/gdb-dashboard
+	url = https://github.com/cyrus-and/gdb-dashboard
