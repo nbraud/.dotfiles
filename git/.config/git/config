@@ -80,3 +80,5 @@
 	sort = version:refname
 [protocol]
 	version = 2
+[color]
+	ui = auto
