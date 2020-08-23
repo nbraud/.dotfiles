@@ -8,9 +8,12 @@ function has() {
 }
 
 # Locales
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+export LANGUAGE=C.UTF-8
+export LANG=C.UTF-8
+#export LC_MEASUREMENT=1 # Use SI units
+export LC_MONETARY=fr_FR.UTF-8
+export LC_NUMERIC=fr_FR.UTF-8
+export LC_TIME=fr_FR.UTF-8
 export LC_COLLATE=C
 
 
