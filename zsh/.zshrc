@@ -16,7 +16,7 @@ setopt NUMERIC_GLOB_SORT
 alias tuerctl='ssh -i ${HOME}/.ssh/keys/realraum/id_door tuerctl@torwaechter.mgmt.realraum.at'
 alias cdtmp='cd "$(mktemp -d)"'
 
-if command -v sm &>/dev/null; then
+if has sm; then
     alias fp='echo "Nicolas Braud-Santoni\n<nicolas@braud-santoni>\n\n772B 11B4 F2DC 80E1 212B\n3F41 B073 9AAD 91B7 CDC0\n\n5494 011A F573 2B89 AEA4\n5E54 3D03 120B C39B 56AB" | sm -'
     alias sm='sm -n "Source Sans Pro"'
 fi
@@ -27,9 +27,8 @@ if [[ -r /etc/zsh_command_not_found ]]; then
     source /etc/zsh_command_not_found
 fi
 
-
 # Direnv
-if command -v direnv &>/dev/null; then
+if has direnv; then
     eval "$(direnv hook $0)"
 fi
 
@@ -53,16 +52,17 @@ antigen apply
 
 
 # Local custom functions
-compdef _r3pass r3pass
-function r3pass() {
-    PASSWORD_STORE_DIR="${HOME}"/perso/r3/noc-pass pass "$@"
-}
-function _r3pass() {
-    PASSWORD_STORE_DIR="${HOME}"/perso/r3/noc-pass _pass "$@"
-}
+if has pass; then
+    compdef _r3pass r3pass
+    function r3pass() {
+        PASSWORD_STORE_DIR="${HOME}"/perso/r3/noc-pass pass "$@"
+    }
+    function _r3pass() {
+        PASSWORD_STORE_DIR="${HOME}"/perso/r3/noc-pass _pass "$@"
+    }
+fi
 
-
-if command -v kubectl >/dev/null; then
+if has kubectl >/dev/null; then
     source <(kubectl completion zsh)
 fi
 
@@ -127,17 +127,17 @@ EOF
     }
 fi
 
-if command -v http >/dev/null; then
+if has http; then
     function httpager() {
         http --pretty=all --print=hb "$@" | less -R
     }
 fi
 
 GUI_SESSION=sway
-if command -v ${GUI_SESSION} >/dev/null; then
-    if command -v vlock >/dev/null; then
-	alias sx="${GUI_SESSION} &; vlock"
+if has ${GUI_SESSION}; then
+    if has vlock; then
+	      alias sx="${GUI_SESSION} &; vlock"
     else
-	alias sx="exec ${GUI_SESSION}"
+	      alias sx="exec ${GUI_SESSION}"
     fi
 fi
