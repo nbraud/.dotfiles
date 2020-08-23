@@ -75,6 +75,13 @@ fi
 # Rust
 ! { has cargo  || [ -d ~/.cargo/bin ] } || path=( ~/.cargo/bin $path )
 
+if has git; then
+    function git_is_clean() {
+        local repo="${1:-$PWD}"
+        local st
+        st="$(git -C ${repo} status --porcelain)" && [ -z "$st" ]
+    }
+fi
 
 # Unset nullglob
 unsetopt nullglob
