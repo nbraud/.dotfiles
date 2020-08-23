@@ -62,8 +62,14 @@
 [url "ssh://gitlab.com/"]
 	pushInsteadOf = "https://gitlab.com/"
 
+[url "ssh://git@gitlab.gnome.org/"]
+	pushInsteadOf = "https://gitlab.gnome.org/"
+
 [url "ssh://github.com/"]
 	pushInsteadOf = "https://github.com/"
+
+[url "ssh://gist.github.com/"]
+	pushInsteadOf = "https://gist.github.com/"
 
 [url "https://github.com/leahneukirchen"]
 	insteadOf = "https://github.com/chneukirchen"
