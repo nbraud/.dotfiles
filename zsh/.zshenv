@@ -29,7 +29,7 @@ export EDITOR=emacsclient
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 
 # Debian
-export DEBFULLNAME="Nicolas Braud-Santoni"
+export DEBFULLNAME="nicoo"
 export DEBEMAIL="nicoo@debian.org"
 
 # Sway
