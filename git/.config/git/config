@@ -82,3 +82,5 @@
 	version = 2
 [color]
 	ui = auto
+[sendemail]
+	suppresscc = self,author
