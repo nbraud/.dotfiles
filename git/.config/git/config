@@ -10,8 +10,10 @@
 	ci  = commit
 	co  = checkout
 	ff  = merge --ff-only
-	fix = commit --amend --no-edit
 	st  = status
+
+	fix = commit --amend --no-edit
+	pfusch = push --force-with-lease
 
 [core]
 	attributesFile = ~/.config/git/attributes
