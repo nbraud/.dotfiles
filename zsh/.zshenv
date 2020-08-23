@@ -73,7 +73,7 @@ fi
 ! has gem || path+=( ~/.gem/ruby/*/bin(/) )
 
 # Rust
-! has cargo || path+=( ~/.cargo/bin )
+! { has cargo  || [ -d ~/.cargo/bin ] } || path=( ~/.cargo/bin $path )
 
 
 # Unset nullglob
