@@ -19,6 +19,7 @@
 	attributesFile = ~/.config/git/attributes
 	excludesfile   = ~/.config/git/ignore
 	whitespace = trailing-space,space-before-tab,tabwidth=4
+	pager = delta --dark
 
 [init]
 	templateDir = ~/.config/git/template/
