@@ -26,9 +26,18 @@ fi
 
 alias rot13='tr "a-zA-Z" "n-za-mN-ZA-M"'
 
-if [[ -r /etc/zsh_command_not_found ]]; then
-    source /etc/zsh_command_not_found
+# Command Not Found support
+# Adapted from a snippet by Zygmunt Krynicki, under GPL license
+if has command-not-found; then
+    if (( ! ${+functions[command_not_found_handler]} )); then
+        local cnf_path="$(command -v command-not-found)"
+        function command_not_found_handler {
+            [[ -x "${cnf_path}" ]] || return 1
+            "${cnf_path}" ${1+"$1"} && :
+        }
+    fi
 fi
+
 
 # Direnv
 if has direnv; then
