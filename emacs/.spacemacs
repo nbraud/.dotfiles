@@ -66,6 +66,7 @@ values."
      ;; spell-checking
      ;; syntax-checking
      version-control
+     nixos
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -388,12 +389,8 @@ you should place your code here."
  '(debian-changelog-mailing-address "nicoo@debian.org")
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
-   (quote
-    (csv-mode dpkg-dev-el debian-el company-terraform terraform-mode pos-tip alert log4e gntp org-plus-contrib json-snatcher json-reformat hydra yasnippet haml-mode popup fringe-helper git-gutter+ git-gutter magit magit-popup git-commit ghub async with-editor dash evil goto-chg ivy haskell-mode rust-mode packed pythonic f s company epl avy org-mime salt-mode mmm-jinja2 graphviz-dot-mode ob-elixir flycheck-mix flycheck-credo alchemist elixir-mode sql-indent utop tuareg caml ocp-indent merlin rainbow-mode adoc-mode markup-faces phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby julia-repl julia-mode flycheck-julia go-guru go-eldoc go-mode yaml-mode which-key web-mode use-package pug-mode org-projectile org-category-capture org-download mmm-mode markdown-toc markdown-mode magit-gitflow intero flycheck hy-mode dash-functional htmlize helm-make helm helm-core evil-magit evil-escape diff-hl counsel-projectile projectile counsel swiper company-ghc color-theme-solarized yapfify wgrep toml-mode tagedit smex smeargle slim-mode seq scss-mode sass-mode racer pyvenv pytest pyenv-mode py-isort pkg-info pip-requirements pcre2el orgit org-present org-pomodoro nginx-mode macrostep live-py-mode let-alist less-css-mode json-mode jinja2-mode ivy-hydra hlint-refactor hindent help-fns+ haskell-snippets gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ ghc gh-md flx exec-path-from-shell evil-visualstar emmet-mode elisp-slime-nav diminish cython-mode company-ghci color-theme cmm-mode cargo bind-map bind-key auto-compile ansible-doc ansible anaconda-mode ace-window)))
- '(safe-local-variable-values
-   (quote
-    ((org-export-allow-bind-keywords . t)
-     (eval ansible)))))
+   '(nixos-options nix-mode lv transient undo-tree csv-mode dpkg-dev-el debian-el company-terraform terraform-mode pos-tip alert log4e gntp org-plus-contrib json-snatcher json-reformat hydra yasnippet haml-mode popup fringe-helper git-gutter+ git-gutter magit magit-popup git-commit ghub async with-editor dash evil goto-chg ivy haskell-mode rust-mode packed pythonic f s company epl avy org-mime salt-mode mmm-jinja2 graphviz-dot-mode ob-elixir flycheck-mix flycheck-credo alchemist elixir-mode sql-indent utop tuareg caml ocp-indent merlin rainbow-mode adoc-mode markup-faces phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby julia-repl julia-mode flycheck-julia go-guru go-eldoc go-mode yaml-mode which-key web-mode use-package pug-mode org-projectile org-category-capture org-download mmm-mode markdown-toc markdown-mode magit-gitflow intero flycheck hy-mode dash-functional htmlize helm-make helm helm-core evil-magit evil-escape diff-hl counsel-projectile projectile counsel swiper company-ghc color-theme-solarized yapfify wgrep toml-mode tagedit smex smeargle slim-mode seq scss-mode sass-mode racer pyvenv pytest pyenv-mode py-isort pkg-info pip-requirements pcre2el orgit org-present org-pomodoro nginx-mode macrostep live-py-mode let-alist less-css-mode json-mode jinja2-mode ivy-hydra hlint-refactor hindent help-fns+ haskell-snippets gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ ghc gh-md flx exec-path-from-shell evil-visualstar emmet-mode elisp-slime-nav diminish cython-mode company-ghci color-theme cmm-mode cargo bind-map bind-key auto-compile ansible-doc ansible anaconda-mode ace-window))
+ '(safe-local-variable-values '((org-export-allow-bind-keywords . t) (eval ansible))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
