@@ -3,6 +3,8 @@ local _ZSH_ROOT="${HOME}/.local/share/zsh"
 local _GRML_ROOT="${_ZSH_ROOT}/grml-etc-core"
 source "${_GRML_ROOT}/etc/zsh/zshenv"
 
+[[ ! -r /etc/profile ]] || source /etc/profile
+
 function has() {
     command -v "$1" >/dev/null
 }
