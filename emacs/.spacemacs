@@ -385,6 +385,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
+ '(auth-source-save-behavior nil)
  '(debian-changelog-full-name "Nicolas Braud-Santoni")
  '(debian-changelog-mailing-address "nicoo@debian.org")
  '(evil-want-Y-yank-to-eol nil)
