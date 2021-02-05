@@ -10,13 +10,16 @@
 	ci  = commit
 	co  = checkout
 	ff  = merge --ff-only
-	fix = commit --amend --no-edit
 	st  = status
+
+	fix = commit --amend --no-edit
+	pfusch = push --force-with-lease
 
 [core]
 	attributesFile = ~/.config/git/attributes
 	excludesfile   = ~/.config/git/ignore
 	whitespace = trailing-space,space-before-tab,tabwidth=4
+	pager = delta --dark
 
 [init]
 	templateDir = ~/.config/git/template/
@@ -48,8 +51,8 @@
 	autostash = on
 
 [user]
-	name = Nicolas Braud-Santoni
-	email = nicolas@braud-santoni.eu
+	name = nicoo
+	email = nicoo@mur.at
 	signingkey = 0xEC9D370872BC7A8C
 
 
@@ -59,8 +62,14 @@
 [url "ssh://gitlab.com/"]
 	pushInsteadOf = "https://gitlab.com/"
 
+[url "ssh://git@gitlab.gnome.org/"]
+	pushInsteadOf = "https://gitlab.gnome.org/"
+
 [url "ssh://github.com/"]
 	pushInsteadOf = "https://github.com/"
+
+[url "ssh://gist.github.com/"]
+	pushInsteadOf = "https://gist.github.com/"
 
 [url "https://github.com/leahneukirchen"]
 	insteadOf = "https://github.com/chneukirchen"
@@ -71,3 +80,7 @@
 	sort = version:refname
 [protocol]
 	version = 2
+[color]
+	ui = auto
+[sendemail]
+	suppresscc = self,author
