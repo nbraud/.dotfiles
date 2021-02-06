@@ -103,8 +103,9 @@ in
 	};
 
 
-  programs.direnv.enable = true;
-  programs.direnv.enableNixDirenvIntegration = true;
+
+	programs.direnv.enable = true;
+	programs.direnv.enableNixDirenvIntegration = true;
 
 	home.packages = with pkgs; [
 		grim
