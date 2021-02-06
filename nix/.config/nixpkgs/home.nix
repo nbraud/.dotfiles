@@ -1,16 +1,5 @@
 { config, pkgs, ... }:
 
-let
-	font.mono = {
-		name = "Source Code Pro";
-		package = pkgs.source-code-pro;
-	};
-	font.sans = {
-		name = "Source Sans Pro";
-		package = pkgs.source-sans-pro;
-	};
-
-in
 {
 	imports = [
 		./gui.nix
@@ -29,9 +18,6 @@ in
 		enableSshSupport = true;
 		defaultCacheTtl = 30 * 60;
 	};
-
-
-
 
 	programs.direnv.enable = true;
 	programs.direnv.enableNixDirenvIntegration = true;
