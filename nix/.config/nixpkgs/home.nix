@@ -108,6 +108,8 @@ in
 	programs.direnv.enableNixDirenvIntegration = true;
 
 	home.packages = with pkgs; [
+		gitAndTools.delta
+		gitAndTools.gh
 		grim
 		httpie
 		ipcalc
@@ -116,6 +118,7 @@ in
 		mako
 		mosh
 		mtr
+		nix-prefetch
 		ripgrep
 		font.mono.package
 		font.sans.package
@@ -123,6 +126,8 @@ in
 		swayidle
 		swaylock
 		tig
+		tree
+		whois
 		wl-clipboard
 		wofi
 		zsh
