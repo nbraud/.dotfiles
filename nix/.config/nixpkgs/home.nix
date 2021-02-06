@@ -13,19 +13,19 @@ let
 in
 {
 
-  programs.emacs.enable = true;
-  services.emacs = {
-    enable = true;
-    socketActivation.enable = true;
-  };
+	programs.emacs.enable = true;
+	services.emacs = {
+		enable = true;
+		socketActivation.enable = true;
+	};
 
-  programs.gpg.enable = true;
-  services.gpg-agent = {
-    enable = true;
-    enableScDaemon = true;
-    enableSshSupport = true;
-    defaultCacheTtl = 30 * 60;
-  };
+	programs.gpg.enable = true;
+	services.gpg-agent = {
+		enable = true;
+		enableScDaemon = true;
+		enableSshSupport = true;
+		defaultCacheTtl = 30 * 60;
+	};
 
 	wayland.windowManager.sway = {
 		enable = true;
