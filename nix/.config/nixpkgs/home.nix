@@ -64,15 +64,6 @@ in
 		#defaultProfiles = [ "gpu-hq" ];
 	};
 
-	programs.kitty = {
-		enable = true;
-		font = font.mono;
-		settings = {
-			font_size = 9;
-			cursor_stop_blinking_after = 10;
-			scrollback_lines = 5000;
-		};
-	};
 	programs.termite = {
 		enable = true;
 		font = "${font.mono.name}, Medium 9";
