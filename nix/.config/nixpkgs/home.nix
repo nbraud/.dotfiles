@@ -16,8 +16,10 @@
     defaultCacheTtl = 30 * 60;
   };
 
+  programs.direnv.enable = true;
+  programs.direnv.enableNixDirenvIntegration = true;
+
 	home.packages = with pkgs; [
-		direnv
 		httpie
 		ipcalc
 		jq
