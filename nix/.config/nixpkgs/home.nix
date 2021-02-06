@@ -119,6 +119,7 @@ in
 		mosh
 		mtr
 		nix-prefetch
+		pavucontrol
 		ripgrep
 		font.mono.package
 		font.sans.package
