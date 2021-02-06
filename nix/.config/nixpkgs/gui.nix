@@ -27,6 +27,12 @@ in
 		};
 	};
 
+	programs.mako = {
+		enable = true;
+		font = "${font.sans.name} 9";
+	};
+
+
 	gtk = {
 		font = font.sans;
 		theme = {
@@ -82,7 +88,6 @@ in
 		font.mono.package
 		font.sans.package
 		grim
-		mako
 		pavucontrol
 		swayidle
 		swaylock
