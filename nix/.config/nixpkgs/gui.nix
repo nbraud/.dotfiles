@@ -19,11 +19,24 @@ in
 			modifier = "Mod4"; # Logo key
 			keybindings =
 				let modifier = config.wayland.windowManager.sway.config.modifier;
+            grimshot = mode: "exec ${pkgs.sway-contrib.grimshot}/bin/grimshot save ${mode} - | ${pkgs.swappy} -f -";
 				in pkgs.lib.mkOptionDefault {
-					"${modifier}+f" = "exec flatpak run org.mozilla.FirefoxNightly";
+          "${modifier}+x" = "layout default";
+					"${modifier}+f" = "exec flatpak run org.mozilla.firefox";
 					"${modifier}+e" = "exec emacsclient -cn";
+          "Print" = grimshot "output";
+          "Ctrl+Print" = grimshot "area";
+          "Shift+Print" = grimshot "screen";
+          "Mod4+Print" = grimshot "active";
+          "Ctrl+Mod4+Print" = grimshot "window";
 				};
-			fonts = [ "${font.sans.name} 9" ];
+			fonts = {
+				names = [ font.sans.name ];
+				size = 9.;
+			};
+			bars = [{
+				command = "${pkgs.waybar}/bin/waybar";
+			}];
 		};
 	};
 
@@ -34,10 +47,11 @@ in
 
 
 	gtk = {
+    enable = true;
 		font = font.sans;
 		theme = {
-			package = pkgs.nordic;
-			name = "Nordic";
+			package = pkgs.solarc-gtk-theme;
+			name = "SolArc";
 		};
 		gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
 	};
@@ -85,13 +99,21 @@ in
 	};
 
 	home.packages = with pkgs; [
+		dillo             # Basic browser for local stuff
+    feh
 		font.mono.package
 		font.sans.package
-		grim
+		grim              # Notifications
+		llpp              # PDF reader
+		mat2              # Metadata Anonymization Toolkit
+		noisetorch
 		pavucontrol
 		swayidle
 		swaylock
+    unzip             # Not GUI, but I only use it on GUI environments
 		wl-clipboard
-		wofi
+		wdisplays
+		wofi              # Launcher menu
+		youtube-dl
 	];
 }

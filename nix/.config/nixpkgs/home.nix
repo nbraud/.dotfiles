@@ -2,33 +2,27 @@
 
 {
 	imports = [
+		./dev.nix
 		./gpg.nix
 		./gui.nix
+		./looking-glass.nix
+		./mail.nix
+		./tor.nix
 	];
 
-	programs.emacs.enable = true;
-	services.emacs = {
-		enable = true;
-		socketActivation.enable = true;
-	};
-
-	programs.direnv.enable = true;
-	programs.direnv.enableNixDirenvIntegration = true;
-
 	home.packages = with pkgs; [
-		gitAndTools.delta
-		gitAndTools.gh
-		httpie
+		cfssl
+		ffsend
+		file
 		ipcalc
-		jq
 		libqalculate
+		magic-wormhole
 		mosh
 		mtr
-		nix-prefetch
-		ripgrep
+		sshfs
 		stow
-		tig
 		tree
+		wget
 		whois
 		zsh
 	];
